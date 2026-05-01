@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(SimpleCalculatorTests LANGUAGES CXX)
+project(CalculatorTests LANGUAGES CXX)
 
 # logos-module-builder auto-detects this file and creates the
 # checks.<system>.unit-tests + packages.<system>.unit-tests targets.
@@ -7,9 +7,9 @@ project(SimpleCalculatorTests LANGUAGES CXX)
 include(LogosTest)
 
 logos_test(
-    NAME simple_calculator_tests
-    MODULE_SOURCES ../src/simple_calculator_impl.cpp
+    NAME calculator_tests
+    MODULE_SOURCES ../src/calculator_impl.cpp
     TEST_SOURCES
         main.cpp
-        test_simple_calculator.cpp
+        test_calculator.cpp
 )

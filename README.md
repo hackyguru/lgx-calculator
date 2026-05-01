@@ -1,6 +1,6 @@
-# Simple Calculator
+# Calculator
 
-A module that performs basic arithmetic calculations.
+A module that performs arithmetic calculations based on input strings.
 
 ## Build
 
@@ -9,13 +9,13 @@ nix flake update           # first time only
 nix build '.#lgx-portable'
 ```
 
-Produces `result/simple_calculator.lgx`. Install into Basecamp's modules dir
-(`~/Library/Application Support/Logos/LogosBasecamp/modules/simple_calculator/` on macOS).
+Produces `result/calculator.lgx`. Install into Basecamp's modules dir
+(`~/Library/Application Support/Logos/LogosBasecamp/modules/calculator/` on macOS).
 
 ## Layout
 
-- `src/simple_calculator_impl.h` — public API (pure C++, std types only)
-- `src/simple_calculator_impl.cpp` — implementation (Qt allowed inside)
+- `src/calculator_impl.h` — public API (pure C++, std types only)
+- `src/calculator_impl.cpp` — implementation (Qt allowed inside)
 - `metadata.json` — module manifest with `"interface": "universal"`
 - `flake.nix` — runs `logos-cpp-generator` in `preConfigure` to emit `generated_code/`
 - `CMakeLists.txt` — `logos_module()` target
@@ -23,13 +23,13 @@ Produces `result/simple_calculator.lgx`. Install into Basecamp's modules dir
 ## Calling from QML
 
 ```qml
-var raw = logos.callModule("simple_calculator", "add", []);
+var raw = logos.callModule("calculator", "calculate", []);
 // raw is a JSON-encoded string. Parse + extract:
 var v = JSON.parse(raw);
 ```
 
 ## Editing
 
-Public method signatures live in `SimpleCalculatorImpl` in `src/simple_calculator_impl.h`.
-Implementation lives in `src/simple_calculator_impl.cpp`. Add private state to the
+Public method signatures live in `CalculatorImpl` in `src/calculator_impl.h`.
+Implementation lives in `src/calculator_impl.cpp`. Add private state to the
 `Private` pimpl class (already there if any Qt-typed state was declared).
