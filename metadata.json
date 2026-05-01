@@ -1,0 +1,26 @@
+{
+  "name": "simple_calculator",
+  "version": "1.0.0",
+  "description": "A module that performs basic arithmetic calculations.",
+  "author": "",
+  "type": "core",
+  "interface": "universal",
+  "category": "custom",
+  "main": "simple_calculator_plugin",
+  "dependencies": [],
+  "include": [],
+  "capabilities": [],
+  "nix": {
+    "packages": {
+      "build": [],
+      "runtime": []
+    },
+    "external_libraries": [],
+    "cmake": {
+      "find_packages": [],
+      "extra_sources": [],
+      "extra_include_dirs": [],
+      "extra_link_libraries": []
+    }
+  }
+}
