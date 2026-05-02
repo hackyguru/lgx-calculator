@@ -1,12 +1,12 @@
 {
-  "name": "ethereum_price_fetcher",
-  "version": "1.0.0",
-  "description": "Fetches the current price of Ethereum from an external API.",
+  "name": "notes_backend",
+  "version": "0.1.0",
+  "description": "Manages note storage and retrieval using SQLite.",
   "author": "",
   "type": "core",
   "interface": "universal",
   "category": "custom",
-  "main": "ethereum_price_fetcher_plugin",
+  "main": "notes_backend_plugin",
   "dependencies": [],
   "include": [],
   "capabilities": [],
@@ -17,14 +17,10 @@
     },
     "external_libraries": [],
     "cmake": {
-      "find_packages": [
-        "Qt6Network"
-      ],
+      "find_packages": [],
       "extra_sources": [],
       "extra_include_dirs": [],
-      "extra_link_libraries": [
-        "Qt6::Network"
-      ]
+      "extra_link_libraries": []
     }
   }
 }
