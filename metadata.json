@@ -1,12 +1,12 @@
 {
-  "name": "notes_backend",
+  "name": "london_time_fetcher",
   "version": "0.1.0",
-  "description": "Manages note storage and retrieval using SQLite.",
+  "description": "Provides the current time in London.",
   "author": "",
   "type": "core",
   "interface": "universal",
   "category": "custom",
-  "main": "notes_backend_plugin",
+  "main": "london_time_fetcher_plugin",
   "dependencies": [],
   "include": [],
   "capabilities": [],
@@ -17,10 +17,14 @@
     },
     "external_libraries": [],
     "cmake": {
-      "find_packages": [],
+      "find_packages": [
+        "Qt6Network"
+      ],
       "extra_sources": [],
       "extra_include_dirs": [],
-      "extra_link_libraries": []
+      "extra_link_libraries": [
+        "Qt6::Network"
+      ]
     }
   }
 }

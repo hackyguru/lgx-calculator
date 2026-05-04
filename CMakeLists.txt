@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(LogosNotesBackendPlugin LANGUAGES CXX)
+project(LogosLondonTimeFetcherPlugin LANGUAGES CXX)
 
 if(DEFINED ENV{LOGOS_MODULE_BUILDER_ROOT})
     include($ENV{LOGOS_MODULE_BUILDER_ROOT}/cmake/LogosModule.cmake)
@@ -13,12 +13,12 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/metadata.json
                ${CMAKE_CURRENT_BINARY_DIR}/metadata.json COPYONLY)
 
 logos_module(
-    NAME notes_backend
+    NAME london_time_fetcher
     SOURCES
-        src/notes_backend_impl.h
-        src/notes_backend_impl.cpp
-        generated_code/notes_backend_qt_glue.h
-        generated_code/notes_backend_dispatch.cpp
+        src/london_time_fetcher_impl.h
+        src/london_time_fetcher_impl.cpp
+        generated_code/london_time_fetcher_qt_glue.h
+        generated_code/london_time_fetcher_dispatch.cpp
     INCLUDE_DIRS
         ${CMAKE_CURRENT_SOURCE_DIR}/generated_code
 )

@@ -1,5 +1,5 @@
 {
-  description = "Manages note storage and retrieval using SQLite.";
+  description = "Provides the current time in London.";
 
   inputs = {
     logos-module-builder.url = "github:logos-co/logos-module-builder";
@@ -11,13 +11,13 @@
       configFile = ./metadata.json;
       flakeInputs = inputs;
       # Runs the universal-module code generator. It parses
-      # src/notes_backend_impl.h and produces the QML/IPC glue under
+      # src/london_time_fetcher_impl.h and produces the QML/IPC glue under
       # generated_code/. CMakeLists.txt picks those up.
       preConfigure = ''
-        logos-cpp-generator --from-header src/notes_backend_impl.h \
+        logos-cpp-generator --from-header src/london_time_fetcher_impl.h \
           --backend qt \
-          --impl-class NotesBackendImpl \
-          --impl-header notes_backend_impl.h \
+          --impl-class LondonTimeFetcherImpl \
+          --impl-header london_time_fetcher_impl.h \
           --metadata metadata.json \
           --output-dir ./generated_code
       '';

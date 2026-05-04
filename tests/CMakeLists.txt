@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(NotesBackendTests LANGUAGES CXX)
+project(LondonTimeFetcherTests LANGUAGES CXX)
 
 # logos-module-builder auto-detects this file and creates the
 # checks.<system>.unit-tests + packages.<system>.unit-tests targets.
@@ -7,9 +7,9 @@ project(NotesBackendTests LANGUAGES CXX)
 include(LogosTest)
 
 logos_test(
-    NAME notes_backend_tests
-    MODULE_SOURCES ../src/notes_backend_impl.cpp
+    NAME london_time_fetcher_tests
+    MODULE_SOURCES ../src/london_time_fetcher_impl.cpp
     TEST_SOURCES
         main.cpp
-        test_notes_backend.cpp
+        test_london_time_fetcher.cpp
 )
